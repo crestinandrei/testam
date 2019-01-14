@@ -13,8 +13,8 @@ namespace ButtonScope {
         struct ButtonTypeStruct {
 
             enum buttonType {
-                Impulse,
-                Switch
+                PushButton,
+                SwitchButton
             };
         };
 
@@ -27,19 +27,28 @@ namespace ButtonScope {
     class Button
     {
         public:
-            bool IsPressed;
-
             Button();
-            Button(ButtonType);
+            Button(int);
+            Button(int, ButtonType);
 
             void SetPin(int);
             void SetTrigger(void (*)());
+            void SetDebounceDelay(unsigned long);
+
+            int GetPin();
+            void (*)() GetTrigger();
+            unsigned long GetDebounceDelay();
+            bool IsPressed();
 
             typedef Shared::ButtonTypeStruct ButtonEnum; 
 
         private:
-            int _ctrlPin;
+            bool _buttonState;
+            bool _prevButtonState;
+            unsigned long _bounceTime;
+            unsigned long _debounceDelay;
             void (*_event)();
+            int _ctrlPin;
             ButtonType _type;
 
             void Debounce();
