@@ -14,25 +14,33 @@ namespace LW_StepperScope {
         struct StepperTypeStruct {
 
             enum stepperType {
-                
+
             };
         };
 
         typedef StepperTypeStruct::stepperType StepperType;
     }
-    
+
     typedef Shared::StepperTypeStruct::stepperType StepperType;
     typedef Shared::StepperTypeStruct StepperEnum;
 
-    class Stepper
+    class LW_Stepper : Stepper
     {
         public:
-            
+            bool sens;
 
-            typedef Shared::StepperTypeStruct StepperEnum; 
+            LW_Stepper(int,int,int,int,int);
+
+            void rotire();
+            void seteazaCursa(int );
+
+            typedef Shared::StepperTypeStruct StepperEnum;
 
         private:
-            
+            int _cursa;
+			std::vector<int> _pini;
+			int _pasiPeRevolutie;
+
     };
 }
 
