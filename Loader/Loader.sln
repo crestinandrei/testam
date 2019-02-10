@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Loader", "Loader\Loader.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LW_Stepper", "..\LW_Stepper\LW_Stepper.vcxitems", "{E0237B94-E5EE-4AC4-A800-1EEC5DBFCBC9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StandardCplusplus-master", "C:\Users\Darius Emanuel\OneDrive\Documents\Arduino\libraries\StandardCplusplus-master\StandardCplusplus-master.vcxitems", "{2E5F0C62-5CD3-46AA-A031-FE914838E56C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Button", "..\Button\Button.vcxitems", "{6A137AE9-AE52-45FF-8A5C-86E5842AF0C9}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		C:\Users\Darius Emanuel\OneDrive\Documents\Arduino\libraries\StandardCplusplus-master\StandardCplusplus-master.vcxitems*{2e5f0c62-5cd3-46aa-a031-fe914838e56c}*SharedItemsImports = 9
+		..\Button\Button.vcxitems*{6a137ae9-ae52-45ff-8a5c-86e5842af0c9}*SharedItemsImports = 9
+		..\LW_Stepper\LW_Stepper.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		..\LW_Stepper\LW_Stepper.vcxitems*{e0237b94-e5ee-4ac4-a800-1eec5dbfcbc9}*SharedItemsImports = 9
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3E47BBD-C080-4FE4-B6EA-4423868B24A6}
+	EndGlobalSection
+EndGlobal

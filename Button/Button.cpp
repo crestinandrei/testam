@@ -1,80 +1,87 @@
+/*
+ Name:		Button.cpp
+ Created:	2/10/2019 1:24:14 AM
+ Author:	Darius Emanuel
+ Editor:	http://www.visualmicro.com
+*/
+
 
 #include "Button.h"
 
 namespace ButtonScope {
 
-    typedef Button base;
+	typedef Button base;
 
-    //Define constructors
-    base::Button()
-    {
-        _buttonState = false;
-        _prevButtonState = false;
-        _buttonTime = 0;
-        _debounceDelay = 50;
-        (*_event) = nullptr;
+	//Define constructors
+	base::Button()
+	{
+		_buttonState = false;
+		_prevButtonState = false;
+		_buttonTime = 0;
+		_debounceDelay = 50;
+		(*_event) = nullptr;
 
-        _ctrlPin = 2
-        _type = Button::ButtonEnum::PushButton
+		_ctrlPin = 2
+			_type = Button::ButtonEnum::PushButton
 
-    }
+	}
 
-    base::Button(int pin)
-    {
-        Button();
-        _ctrlPin = pin
-    }
+	base::Button(int pin)
+	{
+		Button();
+		_ctrlPin = pin
+	}
 
-    base::Button(int pin, ButtonType argType)
-    {
-        Button();
-        _ctrlPin = pin
-        _type = argType
-    }
+	base::Button(int pin, ButtonType argType)
+	{
+		Button();
+		_ctrlPin = pin
+			_type = argType
+	}
 
-    //Define methods
-    void base::SetPin(int pinNr)
-    {
+	//Define methods
+	void base::SetPin(int pinNr)
+	{
 
-    }
+	}
 
-    void base::SetTrigger(void (*f)())
-    {
+	void base::SetTrigger(void(*f)())
+	{
 
-    }
+	}
 
-    void base::SetDebounceDelay(unsigned long time)
-    {
+	void base::SetDebounceDelay(unsigned long time)
+	{
 
-    }
+	}
 
-    int base::GetPin()
-    {
+	int base::GetPin()
+	{
 
-    }
+	}
 
-    void base::GetPin()
-    {
-        
-    }
+	void base::GetPin()
+	{
 
-    void (*)() base::GetTrigger()
-    {
+	}
 
-    }
+	void(*)() base::GetTrigger()
+	{
 
-    unsigned long base::GetDebounceDelay()
-    {
+	}
 
-    }
+	unsigned long base::GetDebounceDelay()
+	{
 
-    bool IsPressed()
-    {
-        
-    }
+	}
 
-    void base::Debounce()
-    {
+	bool IsPressed()
+	{
 
-    }
+	}
+
+	void base::Debounce()
+	{
+
+	}
 }
