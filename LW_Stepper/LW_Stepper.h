@@ -10,7 +10,6 @@
 
 #include "Arduino.h"
 #include "Stepper.h"
-#include <vector>
 
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"
@@ -35,7 +34,8 @@ namespace LW_StepperScope {
 		struct StepperTypeStruct {
 
 			enum stepperType {
-
+				Unipolar,
+				Bipolar
 			};
 		};
 
@@ -50,20 +50,20 @@ namespace LW_StepperScope {
 	public:
 		bool sens;
 
-		LW_Stepper(int, int, int, int, int) : Stepper(0, 0, 0, 0, 0) {};
+		LW_Stepper(int, int, int);
+		LW_Stepper(int, int, int, int, int);
 
-		void rotire();   
+		void rotire();
 		void seteazaCursa(int);
+		void seteazaTip(StepperType);
 
 		typedef Shared::StepperTypeStruct StepperEnum;
 
 	private:
 		int _cursa;
-		vector<int> _pini;
 		int _pasiPeRevolutie;
-
-		void init(int , int, int, int, int);
-
+		int _pozitie;
+		StepperType _tip;
 	};
 }
 

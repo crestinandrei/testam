@@ -84,4 +84,8 @@ namespace ButtonScope {
 	{
 
 	}
+	void(*)() Button::GetTrigger()
+	{
+		return void(*)()();
+	}
 }

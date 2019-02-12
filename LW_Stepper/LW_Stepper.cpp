@@ -8,42 +8,49 @@
 #include "LW_Stepper.h"
 
 namespace LW_StepperScope {
-	typedef LW_Stepper base;
 
 	//Define constructors
+	LW_Stepper::LW_Stepper(int nrDePasi, int p0, int p1) : Stepper(nrDePasi, p0, p1)
+	{
+		sens = true;
+
+		_tip = StepperEnum::Unipolar;
+		_pasiPeRevolutie = nrDePasi;
+		_pozitie = 0;
+		_cursa = 0;
+	}
+
+	LW_Stepper::LW_Stepper(int nrDePasi, int p0, int p1, int p2, int p3) : Stepper(nrDePasi, p0, p1, p2, p3)
+	{
+		sens = true;
+
+		_tip = StepperEnum::Unipolar;
+		_pasiPeRevolutie = nrDePasi;
+		_pozitie = 0;
+		_cursa = 0;
+	}
 
 
 	//Define methods
-	void base::init(int nrDePasi, int p0, int p1, int p2, int p3)
+	void LW_Stepper::rotire()
 	{
-		sens = true;
-		_pini.resize(4);
-
-		_pini.assign(0, p0);
-		_pini.assign(1, p1);
-		_pini.assign(2, p2);
-		_pini.assign(3, p3);
-
-		_pasiPeRevolutie = nrDePasi;
-
-		_cursa = 0;
-	}
-	
-	void base::rotire()
-	{
-
 		int dir = 1;
 
 		if (sens != true) {
 			dir = -1;
 		}
-		step(dir);
 
+		step(dir);
 	}
 
-	void base::seteazaCursa(int val)
+	void LW_Stepper::seteazaCursa(int val)
 	{
 		_cursa = val;
+	}
+
+	void LW_Stepper::seteazaTip(StepperType inType)
+	{
+		_tip = inType;
 	}
 
 }
