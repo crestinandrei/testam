@@ -10,82 +10,71 @@
 
 namespace ButtonScope {
 
-	typedef Button base;
-
 	//Define constructors
-	base::Button()
+	Button::Button()
 	{
 		_buttonState = false;
 		_prevButtonState = false;
-		_buttonTime = 0;
+		_bounceTime = 0;
 		_debounceDelay = 50;
 		(*_event) = nullptr;
 
-		_ctrlPin = 2
-			_type = Button::ButtonEnum::PushButton
-
+		_ctrlPin = 2;
+		_type = ButtonEnum::PushButton;
 	}
 
-	base::Button(int pin)
+	Button::Button(int pin)
 	{
 		Button();
-		_ctrlPin = pin
+		_ctrlPin = pin;
 	}
 
-	base::Button(int pin, ButtonType argType)
+	Button::Button(int pin, ButtonType argType)
 	{
 		Button();
-		_ctrlPin = pin
-			_type = argType
+		_ctrlPin = pin;
+		_type = argType;
 	}
 
 	//Define methods
-	void base::SetPin(int pinNr)
+	void Button::SetPin(int pinNr)
 	{
-
+		//Aloca valoarea unui pin pentru pinul de control
 	}
 
-	void base::SetTrigger(void(*f)())
+	int Button::GetPin()
 	{
-
+		//Returneaza pinul de control al butonului
 	}
 
-	void base::SetDebounceDelay(unsigned long time)
+	void Button::SetTrigger(void(*f)())
 	{
-
+		//Seteaza functia event, care e apelata in urma semnalului de intrare
 	}
 
-	int base::GetPin()
-	{
-
-	}
-
-	void base::GetPin()
-	{
-
-	}
-
-	void(*)() base::GetTrigger()
-	{
-
-	}
-
-	unsigned long base::GetDebounceDelay()
-	{
-
-	}
-
-	bool IsPressed()
-	{
-
-	}
-
-	void base::Debounce()
-	{
-
-	}
 	void(*)() Button::GetTrigger()
 	{
+		//Returneaza adresa functiei event alocate
 		return void(*)()();
+	}
+
+	void Button::SetDebounceDelay(unsigned long time)
+	{
+		//Seteaza timpul alocat pragului de filtrare
+	}
+
+	unsigned long Button::GetDebounceDelay()
+	{
+		//Returneaza valoarea actuala pentru filtrare
+	}
+
+	bool Button::IsPressed()
+	{
+		//Verifica daca butonul e apasat sau nu
+	}
+
+	void Button::Debounce()
+	{
+		//Filtreaza semnalul 
 	}
 }
